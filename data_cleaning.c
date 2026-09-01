@@ -2,7 +2,11 @@
 //  COP4610_Assignment1
 //
 //  Group Memebers: Jowayne Hudson
-//
+// TODO: Validate all six fields and reject any malformed record silently.
+// TODO: Print the exact required CSV header and valid student rows to standard output.
+// TODO: Create the Makefile with all, clean, and rebuild targets using the required gcc flags.
+// TODO: Test input1.txt through input5.txt and compare output with diff -BZ.
+// TODO: Complete README.txt with team info, AI disclosure, and AI critique.
 //
 
 #include <stdio.h>
