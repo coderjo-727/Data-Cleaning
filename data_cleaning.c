@@ -80,7 +80,7 @@ void parse_name(char *line, Student *student) {
         }
         
         //reads only the first 2 words and stores them into the name field of the student struct
-        if (sscanf(name_position, "%48s %49s", first_name, last_name) == 2) {
+        if (sscanf(name_position, "%49s %49s", first_name, last_name) == 2) {
             snprintf(student -> name, sizeof(student->name),
                      "%s %s",
                      first_name,
@@ -88,7 +88,7 @@ void parse_name(char *line, Student *student) {
         }
     }
 }
-// PID, Year, Phone and email all follow the same generic rule, grab everything after the label
+// PID, Year, Phone and email all follow the same generic rule, grabs first token after the label
 void parse_field(char *line, const char *field_label, char *field, int field_size) {
     
     char *field_position = strstr(line, field_label);
@@ -151,7 +151,7 @@ void parse_department(char *line, Student *student) {
 int main(int argc, char *argv[]) {
     FILE *file;
     char line[MAX_LINE];
-    Student student = {};
+    Student student = {0};
     
     if (argc != 2) {
         return 1;
